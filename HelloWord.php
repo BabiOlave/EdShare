@@ -7,3 +7,5 @@ Route::get('/', function () {
 });
 Route::get('registro', function(){
 	return view('registrar');
+
+//el simon vale callampa
