@@ -33,12 +33,40 @@
             .title {
                 font-size: 96px;
             }
+            .quote{
+                font-size: 24px;
+            }
+            label{
+                margin-right: 20px;
+            }
+
+
+            form{
+                background:%f5f5f5;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            input[type="submit"]{
+                background:#0098cb;
+                border:0px;
+                border-radius: 5px;
+                color: #fff;
+                padding: 10px;
+                margin:20px auto;
+            }
         </style>
     </head>
     <body>
         <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
+            
+                <div class="content">
+<form action="{{ URL::to('upload')}}" method="post" enctype="multipart/form-data">
+<label>select file to upload:</label>
+        <input type="file" name="file" id="file">
+        <input type="submit" value"upload" name="submit">
+        <input type="hidden" value="{{ csrf_token()}}" name="_token">
+</form>
+</div>
             </div>
         </div>
     </body>

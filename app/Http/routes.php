@@ -12,26 +12,32 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 Route::get('buscar', function(){
 	return view('buscar');
 
 
 });
-Route::get('abrir_dato', function(){
-	return view('abrir_dato');
-	
 
-});
 Route::get('login', function(){
 	return view('login');
+
 	
 
 });
+Route::get('form', function(){
+ return View::make('create');
+});
 
-
+Route::any('form-submit', function(){
+ var_dump(Input::file('file'));
+});
+// Route::get('create', 'StorageController@index');
+Route::post('upload','UploadController@upload');
+Route::resource('pelicula','MovieController');
 Route::get('upload', function() {
-  return View::make('pages.upload');
+  return View::make('create');
 });
 Route::post('apply/upload', 'ApplyController@upload');
+Route::get('descargar','UploadController@downloadFile');

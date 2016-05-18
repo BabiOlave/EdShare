@@ -17,7 +17,7 @@
 						<div class="feature">
 							<a href="images/science.png"><img src="images/science.png">
 							</a>
-							<h3>Quimica</h3>
+							<h3>>Quimica</h3
 							
 						</div>
 						<div class="feature">

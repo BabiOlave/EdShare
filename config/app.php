@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -172,7 +172,7 @@ return [
 
     'aliases' => [
 
-         
+         'Input'     => Illuminate\Support\Facades\Input::class,
         'Form'  => Collective\Html\FormFacade::class,
         'HTML'=> Collective\Html\HtmlFacade::class,
         'App' => Illuminate\Support\Facades\App::class,

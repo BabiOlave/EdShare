@@ -1,17 +1,31 @@
-// Validating Empty Field
-function check_empty() {
-if (document.getElementById('name').value == "" || document.getElementById('email').value == "" || document.getElementById('msg').value == "") {
-alert("Fill All Fields !");
-} else {
-document.getElementById('form').submit();
-alert("Form Submitted Successfully...");
-}
-}
-//Function To Display Popup
-function div_show() {
-document.getElementById('abc').style.display = "block";
-}
-//Function to Hide Popup
-function div_hide(){
-document.getElementById('abc').style.display = "none";
-}
+$("#modal_trigger").leanModal({
+        top: 100,
+        overlay: 0.6,
+        closeButton: ".modal_close"
+});
+
+$(function() {
+        // Calling Login Form
+        $("#login_form").click(function() {
+                $(".social_login").hide();
+                $(".user_login").show();
+                return false;
+        });
+
+        // Calling Register Form
+        $("#register_form").click(function() {
+                $(".social_login").hide();
+                $(".user_register").show();
+                $(".header_title").text('Register');
+                return false;
+        });
+
+        // Going back to Social Forms
+        $(".back_btn").click(function() {
+                $(".user_login").hide();
+                $(".user_register").hide();
+                $(".social_login").show();
+                $(".header_title").text('Login');
+                return false;
+        });
+});

@@ -1,122 +1,243 @@
-@import "http://fonts.googleapis.com/css?family=Raleway";
-/*----------------------------------------------
-CSS settings for HTML div Exact Center
-------------------------------------------------*/
-#abc {
-width:100%;
-height:100%;
-opacity:.95;
-top:0;
-left:0;
-display:none;
-position:fixed;
-background-color:#313131;
-overflow:auto
+#lean_overlay {
+        position: fixed;
+        z-index: 100;
+        top: 0px;
+        left: 0px;
+        height: 100%;
+        width: 100%;
+        background: #000;
+        display: none;
 }
-img#close {
-position:absolute;
-right:-14px;
-top:-14px;
-cursor:pointer
+
+.popupContainer {
+        position: relative;
+        width: 330px;
+        height: center;
+        left: 45%;
+        top: 10px;
+        background: #FFF;
 }
-div#popupContact {
-position:absolute;
-left:50%;
-top:17%;
-margin-left:-202px;
-font-family:'Raleway',sans-serif
+
+#modal_trigger {
+        margin: 40px auto;
+        width: 200px;
+        display: block;
+        border: 1px solid #DDD;
+        border-radius: 4px;
 }
-form {
-max-width:300px;
-min-width:250px;
-padding:10px 50px;
-border:2px solid gray;
-border-radius:10px;
-font-family:raleway;
-background-color:#fff
+
+.btn {
+        padding: 10px 20px;
+        background: #F4F4F2;
 }
-p {
-margin-top:30px
+
+.btn_red {
+        background: #ED6347;
+        color: #FFF;
 }
-h2 {
-background-color:#FEFFED;
-padding:20px 35px;
-margin:-10px -50px;
-text-align:center;
-border-radius:10px 10px 0 0
+
+.btn:hover {
+        background: #E4E4E2;
 }
-hr {
-margin:10px -50px;
-border:0;
-border-top:1px solid #ccc
+
+.btn_red:hover {
+        background: #C12B05;
 }
-input[type=text] {
-width:82%;
-padding:10px;
-margin-top:30px;
-border:1px solid #ccc;
-padding-left:40px;
-font-size:16px;
-font-family:raleway
+
+a.btn {
+        color: #666;
+        text-align: center;
+        text-decoration: none;
 }
-input[type=password] {
-width:82%;
-padding:10px;
-margin-top:30px;
-border:1px solid #ccc;
-padding-left:40px;
-font-size:16px;
-font-family:raleway
+
+a.btn_red {
+        color: #FFF;
 }
-#name {
-background-image:url(../images/name.jpg);
-background-repeat:no-repeat;
-background-position:5px 7px
+
+.one_half {
+        width: 50%;
+        display: block;
+        float: left;
 }
-#email {
-background-image:url(../images/email.png);
-background-repeat:no-repeat;
-background-position:5px 7px
+
+.one_half.last {
+        width: 45%;
+        margin-left: 5%;
 }
-textarea {
-background-image:url(../images/msg.png);
-background-repeat:no-repeat;
-background-position:5px 7px;
-width:82%;
-height:95px;
-padding:10px;
-resize:none;
-margin-top:30px;
-border:1px solid #ccc;
-padding-left:40px;
-font-size:16px;
-font-family:raleway;
-margin-bottom:30px
+/* Popup Styles*/
+
+.popupHeader {
+        font-size: 16px;
+        text-transform: uppercase;
 }
-#submit {
-text-decoration:none;
-width:100%;
-text-align:center;
-display:block;
-background-color:#FFBC00;
-color:#fff;
-border:1px solid #FFCB00;
-padding:10px 0;
-font-size:20px;
-cursor:pointer;
-border-radius:5px
+
+.popupHeader {
+        background: #F4F4F2;
+        position: relative;
+        padding: 10px 20px;
+        border-bottom: 1px solid #DDD;
+        font-weight: bold;
 }
-span {
-color:red;
-font-weight:700
+
+.popupHeader .modal_close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 10px 15px;
+        background: #E4E4E2;
+        cursor: pointer;
+        color: #aaa;
+        font-size: 16px;
 }
-button {
-width:10%;
-height:45px;
-border-radius:3px;
-background-color:#cd853f;
-color:#fff;
-font-family:'Raleway',sans-serif;
-font-size:18px;
-cursor:pointer
+
+.popupBody {
+        padding: 20px;
+}
+/* Social Login Form */
+
+.social_login {}
+
+.social_login .social_box {
+        display: block;
+        clear: both;
+        padding: 10px;
+        margin-bottom: 10px;
+        background: #F4F4F2;
+        overflow: hidden;
+}
+.social_login input[type="text"],
+.social_login input[type="email"],
+.social_login input[type="password"] {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #DDD;
+        color: #666;}
+
+.social_login .icon {
+        display: block;
+        width: 10px;
+        padding: 5px 10px;
+        margin-right: 10px;
+        float: left;
+        color: #FFF;
+        font-size: 16px;
+        text-align: center;
+}
+
+.social_login .fb .icon {
+        background: #3B5998;
+}
+
+.social_login .google .icon {
+        background: #DD4B39;
+}
+
+.social_login .icon_title {
+        display: block;
+        padding: 5px 0;
+        float: left;
+        font-weight: bold;
+        font-size: 16px;
+        color: #777;
+}
+
+.social_login .social_box:hover {
+        background: #E4E4E2;
+}
+
+.centeredText {
+        text-align: center;
+        margin: 20px 0;
+        clear: both;
+        overflow: hidden;
+        text-transform: uppercase;
+}
+
+.action_btns {
+        clear: both;
+        overflow: hidden;
+}
+
+.action_btns a {
+        display: block;
+}
+/* User Login Form */
+
+.user_login {
+        display: none;
+}
+
+.user_login label {
+        display: block;
+        margin-bottom: 5px;
+}
+
+.user_login input[type="text"],
+.user_login input[type="email"],
+.user_login input[type="password"] {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #DDD;
+        color: #666;
+}
+
+.user_login input[type="checkbox"] {
+        float: left;
+        margin-right: 5px;
+}
+
+.user_login input[type="checkbox"]+label {
+        float: left;
+}
+
+.user_login .checkbox {
+        margin-bottom: 10px;
+        clear: both;
+        overflow: hidden;
+}
+
+.forgot_password {
+        display: block;
+        margin: 20px 0 10px;
+        clear: both;
+        overflow: hidden;
+        text-decoration: none;
+        color: #ED6347;
+}
+/* User Register Form */
+
+.user_register {
+        display: none;
+}
+
+.user_register label {
+        display: block;
+        margin-bottom: 5px;
+}
+
+.user_register input[type="text"],
+.user_register input[type="email"],
+.user_register input[type="password"] {
+        display: block;
+        width: 90%;
+        padding: 10px;
+        border: 1px solid #DDD;
+        color: #666;
+}
+
+.user_register input[type="checkbox"] {
+        float: left;
+        margin-right: 5px;
+}
+
+.user_register input[type="checkbox"]+label {
+        float: left;
+}
+
+.user_register .checkbox {
+        margin-bottom: 10px;
+        clear: both;
+        overflow: hidden;
 }
