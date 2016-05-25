@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => env('APP_DEBUG', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -126,6 +126,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
+        Barryvdh\DomPDF\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
@@ -171,8 +172,9 @@ return [
     */
 
     'aliases' => [
-
-         
+    
+        'PDF' => 'Barryvdh\DomPDF\Facade',
+         'Input'     => Illuminate\Support\Facades\Input::class,
         'Form'  => Collective\Html\FormFacade::class,
         'HTML'=> Collective\Html\HtmlFacade::class,
         'App' => Illuminate\Support\Facades\App::class,

@@ -8,8 +8,10 @@
 		
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/login-style.css">
 		<!-- <link href="css/login-style.css" rel="stylesheet"> -->
-<script src="js/login-js.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.leanModal.min.js"></script>
 	</head>
 	<body>
 
@@ -20,16 +22,16 @@
 				<h1><a href="#">Ion</a></h1>
 				<nav id="nav">
 					<ul>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="left-sidebar.html">Left Sidebar</a></li>
-						<li><a href="right-sidebar.html">Right Sidebar</a></li>
-						<li><a href="no-sidebar.html">No Sidebar</a></li>
-						<li><a href="#" class="button special">Sign Up</a></li>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="left-sidebar.html">Quienes Somos</a></li>
+						<li><a href="right-sidebar.html">Menu Principal</a></li>
+						<li><a href="no-sidebar.html">registrate</a></li>
+						<li><a href="#" class="button special">Iniciar Sesión</a></li>
 					</ul>
 				</nav>
 			</header>
 		
-		
+		<!-- Pagina inicial -->
 
 			<section id="banner">
 				<h2><strong>Central De Apuntes</strong> </h2>
@@ -38,49 +40,205 @@
                    DISPOSICIÓN
                 </p>
 
-				<ul class="actions">
-					<li>
-					 <button id="popup" onclick="div_show()">Popup</button>
-					 </div>
-				
-                     </li>
-				</ul>
-				
+<!-- Iniciar Sesion -->
+				<div class="container">
+	<a id="modal_trigger" href="#modal" class="btn">Iniciar Sesion</a>
+
+	<div id="modal" class="popupContainer" style="display:none;">
+		<header class="popupHeader">
+			<span class="header_title">Login</span>
+			<span class="modal_close"><i class="fa fa-times"></i></span>
+		</header>
+		
+		<section class="popupBody">
+			<!--  Social Login 
+			<div class="social_login">
+				<div class="">
+					<a href="#" class="social_box fb">
+						<span class="icon"><i class="fa fa-facebook"></i></span>
+						<span class="icon_title">Connect with Facebook</span>
+						
+					</a>
+
+					<a href="#" class="social_box google">
+						<span class="icon"><i class="fa fa-google-plus"></i></span>
+						<span class="icon_title">Connect with Google</span>
+					</a>
+				</div>
+
+				<div class="centeredText">
+					<span>Or use your Email address</span>
+				</div>
+
+				<div class="action_btns">
+					<div class="one_half"><a href="#" id="login_form" class="btn">Login</a></div>
+					<div class="one_half last"><a href="#" id="register_form" class="btn">Sign up</a></div>
+				</div>
+			</div> -->
+
+			<!-- Username & Password Login form -->
+			<div class="social_login">
+				<form action="login" method="post">
+				<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+					<label>Email</label>
+					<input type="email" name="email" />
+					<br />
+
+					<label>Password</label>
+					<input type="password" name="password" />
+					<br />
+
+					<div class="checkbox">
+						<input id="remember" type="checkbox" />
+						<label for="remember">Remember me on this computer</label>
+					</div>
+
+					<div class="action_btns">
+						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+						<div class="one_half last"><button type="submit" class="btn btn_red">Login</a></div>
+					</div>
+				</form>
+
+				<a href="#" class="forgot_password">Forgot password?</a>
+			</div>
+
+			<!-- Register Form 
+			<div class="user_register">
+				<form>
+					<label>Full Name</label>
+					<input type="text" />
+					<br />
+
+					<label>Email Address</label>
+					<input type="email" />
+					<br />
+
+					<label>Password</label>
+					<input type="password" />
+					<br />
+
+					<div class="checkbox">
+						<input id="send_updates" type="checkbox" />
+						<label for="send_updates">Send me occasional email updates</label>
+					</div>
+
+					<div class="action_btns">
+						<div class="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+						<div class="one_half last"><a href="#" class="btn btn_red">Register</a></div>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
+</div> -->
+</section>
+</div>
+</div>
+<script type="text/javascript">
+	$("#modal_trigger").leanModal({top : 200, overlay : 0.6, closeButton: ".modal_close" });
+
+	$(function(){
+		// Calling Login Form
+		// $("#login_form").click(function(){
+		// 	$(".social_login").hide();
+		// 	$(".user_login").show();
+		// 	return false;
+		// });
+
+		// Calling Register Form
+		$("#register_form").click(function(){
+			$(".social_login").hide();
+			$(".user_register").show();
+			$(".header_title").text('Register');
+			return false;
+		});
+
+		// Going back to Social Forms
+		$(".back_btn").click(function(){
+			$(".user_login").hide();
+			$(".user_register").hide();
+			$(".social_login").show();
+			$(".header_title").text('Login');
+			return false;
+		});
+
+	})
+</script>
+
+	</section>
+
 </section>
 
+<!-- Quienes Somos -->
 
 <section id="one" class="wrapper style1">
 				<header class="major">
-					<h2>Ipsum feugiat consequat</h2>
-					<p>Tempus adipiscing commodo ut aliquam blandit</p>
+					<h2>Quienes Somos</h2>
+					<p>Una pequeña expliación de nosotros</p>
 				</header>
 				<div class="container">
 					<div class="row">
 						<div class="4u">
 							<section class="special box">
 								<i class="icon fa-area-chart major"></i>
-								<h3>Justo placerat</h3>
-								<p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+								<h3>Velocidad</h3>
+								<p>aqui va una explicación</p>
 							</section>
 						</div>
 						<div class="4u">
 							<section class="special box">
 								<i class="icon fa-refresh major"></i>
-								<h3>Blandit quis curae</h3>
-								<p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+								<h3>Comodidad</h3>
+								<p>aqui va una explicación</p>
 							</section>
 						</div>
 						<div class="4u">
 							<section class="special box">
 								<i class="icon fa-cog major"></i>
-								<h3>Amet sed accumsan</h3>
-								<p>Eu non col commodo accumsan ante mi. Commodo consectetur sed mi adipiscing accumsan ac nunc tincidunt lobortis.</p>
+								<h3>Dinamico</h3>
+								<p>aqui va una explicación</p>
 							</section>
 						</div>
 					</div>
 				</div>
 			</section>
+ <!-- 
+             Registrate -->
+<section id="two" class="wrapper style2 special">
+				<div class="inner narrow">
+					<header>
+						<h2>REGISTRATE</h2>
+					</header>
+					<form class="grid-form" method="POST" action="registro">
+					<input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+						<div class="form-control narrow">
+							<label for="name">Nombre</label>
+							<input name="name" id="name" type="text">
+						
+						</div>
+						<div class="form-control narrow">
+						<label for="apellido">Apellido
+						</label>
+						<input name="LastName" id="LastName" type="text">
+							
+						</div>
+						
+						<div class="form-control narrow">
+							<label for="email">Correo</label>
+							<input name="email" id="email" type="email">
+						</div>
+						<div class="form-control narrow">
+						<label for="name">Contraseña</label>
+						<input name="password" id="password" type="password">
+						</div>
+                        
 
+						<ul class="actions">
+							<li><input value="Registrarte" type="submit" name="submit" class="btn btn-primary"></li>
+						</ul>
+					</form>
+				</div>
+			</section>
 			
 			<!-- </section>
 			
@@ -132,40 +290,7 @@
 			</section> --> 
 
 		<!-- Two -->
-			<section id="two" class="wrapper style2 special">
-				<div class="inner narrow">
-					<header>
-						<h2>REGISTRATE</h2>
-					</header>
-					<form class="grid-form" method="post" action="#">
-						<div class="form-control narrow">
-							<label for="name">Nombre</label>
-							<input name="name" id="name" type="text">
-						
-						</div>
-						<div class="form-control narrow">
-						<label for="apellido">Apellido
-						</label>
-						<input name="apellido" id="apellido" type="text">
-							
-						</div>
-						
-						<div class="form-control narrow">
-							<label for="email">Email</label>
-							<input name="email" id="email" type="email">
-						</div>
-						<div class="form-control narrow">
-						<label for="name">Contraseña</label>
-						<input name="contraseña" id="contraseña" type="password">
-						</div>
-
-
-						<ul class="actions">
-							<li><input value="Registrarte" type="submit"></li>
-						</ul>
-					</form>
-				</div>
-			</section>
+			
 
 
 		<!-- 
